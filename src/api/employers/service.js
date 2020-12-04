@@ -16,6 +16,11 @@ const get = async (req, res, next) => {
     const sorter = sort.split('-').length === 1 ? 1 : -1;
     filter.page = undefined;
     const total = await Employer.countDocuments(filter);
+    Object.keys(filter).forEach(key => {
+      if (filter[key])
+      filter[key] = `/${filter[key]}/`
+    });
+    console.log(filter)
 
     Employer.find(filter).sort({ [key_to_sort] : sorter })
       .skip(salto)

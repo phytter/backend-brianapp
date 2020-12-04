@@ -1,12 +1,12 @@
 const TimeSheets = require('./timeSheets')
 const aqp =require('api-query-params')
 const _ = require('lodash')
-TimeSheets.methods(['post','put','delete'])
+TimeSheets.methods(['get','post','put','delete'])
 TimeSheets.updateOptions({new:true,runValidators: true})
 
 
 
-const get = async (req, res, next) => {
+const getAll = async (req, res, next) => {
     const { filter} = aqp(req.query);
     const page = +req.query.page || 1;
     const limit = +req.query.limit || 10;
@@ -33,4 +33,4 @@ const get = async (req, res, next) => {
     });
 }
 
-module.exports = {TimeSheets, get}
+module.exports = {TimeSheets, getAll}

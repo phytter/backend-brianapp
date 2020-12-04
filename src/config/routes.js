@@ -6,9 +6,9 @@ module.exports = function(server){
     server.use('/api', openApi)
     const Employer = require('../api/employers/service')
     Employer.Employer.register(openApi, '/employers')
-    openApi.get('/employers', Employer.get)
+    openApi.get('/employers/getall', Employer.get)
 
     const TimeSheets = require('../api/timeSheets/service')
     TimeSheets.TimeSheets.register(openApi, '/time-sheets')
-    openApi.get('/time-sheets', TimeSheets.get)
+    openApi.get('/time-sheets/getall', TimeSheets.getAll)
 }
