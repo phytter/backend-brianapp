@@ -1,2 +1,2 @@
 
-web: pm2 start src/loader.js --name myApp
+web: node src/loader.js
