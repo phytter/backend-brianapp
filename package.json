@@ -5,7 +5,8 @@
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name myApp"
+    "production": "pm2 start src/loader.js --name myApp",
+    "start": "pm2 start src/loader.js --name myApp"
   },
   "repository": {
     "type": "git",
