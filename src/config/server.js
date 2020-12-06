@@ -8,6 +8,6 @@ const server = express()
 server.use(allowCors)
 server.use(bodyParser.urlencoded({extended: true}))
 server.use(bodyParser.json())
-server.listen(port,()=>console.log(`Backend na porta ${port}`))
+server.listen(port,'0.0.0.0')
 
 module.exports = server
