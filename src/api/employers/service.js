@@ -18,7 +18,7 @@ const get = async (req, res, next) => {
     const total = await Employer.countDocuments(filter);
     Object.keys(filter).forEach(key => {
       if (filter[key])
-      filter[key] = `/${filter[key]}/`
+      filter[key] = { $regex: `${filter[key]}`, $options:"i"}
     });
     console.log(filter)
 
