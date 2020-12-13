@@ -1,7 +1,7 @@
 const Employer = require('./employers')
 const aqp =require('api-query-params')
 const _ = require('lodash')
-Employer.methods(['post','put','delete'])
+Employer.methods(['post','put','delete', 'get'])
 Employer.updateOptions({new:true,runValidators: true})
 
 
